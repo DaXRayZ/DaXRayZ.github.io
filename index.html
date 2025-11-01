@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Order/Print</title>
+  <title>PKNSB Attendance</title>
   <style>
     html, body {
       margin: 0;
@@ -12,27 +12,24 @@
       overflow: hidden;
     }
     iframe {
-      border: none;
       width: 100%;
       height: 100%;
+      border: none;
     }
   </style>
 </head>
 <body>
-  <iframe 
-    id="autoFrame" 
-    src="about:blank" 
-    title="Business Dashboard"
-    sandbox="allow-same-origin allow-scripts"
-    referrerpolicy="no-referrer"
-  >
-    Your browser does not support iframes or the content failed to load.
-  </iframe>
-
   <script>
-    // Automatically load the PKNSB dashboard URL
+    // Automatically create an iframe and load your dashboard
     const url = "https://business-dashboard-w-s97r5cf1.sites.blink.new/order";
-    document.getElementById("autoFrame").src = url;
+
+    const iframe = document.createElement("iframe");
+    iframe.src = url;
+    iframe.title = "PKNSB Business Dashboard";
+    iframe.sandbox = "allow-same-origin allow-scripts";
+    iframe.referrerPolicy = "no-referrer";
+
+    document.body.appendChild(iframe);
   </script>
 </body>
 </html>
